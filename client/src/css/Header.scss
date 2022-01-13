@@ -1,0 +1,26 @@
+.header {
+  background-color: royalblue;
+  justify-content: space-between;
+  padding: 0.7em 0;
+
+  &__name {
+    // border: 1px solid red;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__lists {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    // border: 1px solid pink;
+  }
+  &__list {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
