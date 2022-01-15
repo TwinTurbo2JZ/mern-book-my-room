@@ -32,7 +32,6 @@ const RoomSchema = new mongoose.Schema(
     },
     address: {
       type: String,
-      required: [true, "please enter an address"],
     },
     state: {
       type: String,

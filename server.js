@@ -15,7 +15,14 @@ connectDB();
 //cookie parser
 const cookieParser = require("cookie-parser");
 
+//importing routes
+const rooms = require("./routes/rooms.js");
+
 //middleware
+
+//router routes
+
+app.use("/api", rooms);
 
 //body parser
 app.use(express.json());
