@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const morgan = require("morgan");
 
 //dotenv
@@ -19,6 +20,7 @@ const cookieParser = require("cookie-parser");
 const rooms = require("./routes/rooms.js");
 
 //middleware
+app.use(cors());
 
 //router routes
 
