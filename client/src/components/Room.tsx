@@ -1,5 +1,5 @@
-import React from "react";
-import HotelPage from "./Hotelpage";
+import { FC } from "react";
+//fix rooms any
 
 enum roomType {
   "Delux",
@@ -17,7 +17,7 @@ interface RoomsProps {
 }
 // { rooms }:
 
-const Hotels = ({
+const Hotels: FC<RoomsProps> = ({
   name,
   description,
   imageurls,
@@ -25,11 +25,11 @@ const Hotels = ({
   phonenumber,
   type,
   rentperday,
-}: RoomsProps) => {
+}) => {
   return (
     <div>
       <h2>{name}</h2>
-      <img src={imageurls[0]} alt="room-image" />
+      <img src={imageurls[0]} alt="room" />
       <p>room capacity: {maxcount}</p>
       <p>{type}</p>
       <h3>{rentperday}</h3>

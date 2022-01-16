@@ -25,13 +25,29 @@ const Homescreen = () => {
     fetchRooms();
   }, []);
 
+  enum roomType {
+    "Delux",
+    "Non-delux",
+  }
+
+  type room = {
+    _id: any;
+    name: string;
+    description: string;
+    imageurls: [string];
+    maxcount: number;
+    phonenumber: number;
+    type: roomType;
+    rentperday: number;
+  };
+
   return (
     <div>
       {/* <h1>home</h1> */}
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        rooms.map((room: any) => <Room key={room._id} {...room} />)
+        rooms.map((room: room) => <Room key={room._id} {...room} />)
       )}
     </div>
   );
