@@ -42,7 +42,7 @@ const Homescreen = () => {
   };
 
   return (
-    <div>
+    <div className="container cards">
       {/* <h1>home</h1> */}
       {loading ? (
         <h1>Loading...</h1>

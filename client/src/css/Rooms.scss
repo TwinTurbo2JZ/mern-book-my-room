@@ -1,0 +1,28 @@
+.cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.room {
+  //   border: 2px solid red;
+  padding: 1em 1em;
+  margin: 1em 0;
+  display: flex;
+
+  &__imagediv {
+    margin-right: 1em;
+    width: 50%;
+  }
+
+  &__datadiv {
+    width: 100%;
+  }
+
+  &__datadiv > * + * {
+    margin-top: 1em;
+  }
+
+  &__image {
+    max-width: 100%;
+  }
+}

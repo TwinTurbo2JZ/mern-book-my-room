@@ -27,12 +27,17 @@ const Hotels: FC<RoomsProps> = ({
   rentperday,
 }) => {
   return (
-    <div>
-      <h2>{name}</h2>
-      <img src={imageurls[0]} alt="room" />
-      <p>room capacity: {maxcount}</p>
-      <p>{type}</p>
-      <h3>{rentperday}</h3>
+    <div className=" room">
+      <div className="room__imagediv">
+        <img src={imageurls[0]} alt="room" className="room__image" />
+      </div>
+      <div className="room__datadiv">
+        <h2 className="room__name">{name}</h2>
+
+        <p className="room__capacity">room capacity: {maxcount}</p>
+        <p className="room__type">{type}</p>
+        <h3 className="room__rent">Rs:{rentperday}</h3>
+      </div>
     </div>
   );
 };
