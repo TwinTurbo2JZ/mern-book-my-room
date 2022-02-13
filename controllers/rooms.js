@@ -2,6 +2,7 @@
 const Rooms = require("../models/Rooms.js");
 
 exports.getRooms = async (req, res, next) => {
+  //test
   try {
     //fetching from database
     const rooms = await Rooms.find();
@@ -10,5 +11,9 @@ exports.getRooms = async (req, res, next) => {
       status: "success",
       data: rooms,
     });
-  } catch (error) {}
+  } catch (error) {
+    res.status(404).json({
+      error: error.message,
+    });
+  }
 };

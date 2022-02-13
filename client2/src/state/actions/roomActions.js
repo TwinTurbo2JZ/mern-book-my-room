@@ -22,10 +22,11 @@ export const listRooms = () => async (dispatch) => {
     dispatch({
       type: ROOM_LIST_FAIL,
 
-      payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
+      payload: error.message,
+      //   payload:
+      //     error.response && error.response.data.message
+      //       ? error.response.data.message
+      //       : error.message,
     });
   }
 };

@@ -43,14 +43,9 @@ const Homescreen = () => {
       ) : error ? (
         <h3>{error}</h3>
       ) : (
-        // console.log(rooms.data)
+        //console.log(rooms.data)
         rooms.data.map((room) => <Rooms key={room._id} {...room} />)
       )}
-      {/* {loading ? (
-        <h1>Loading...</h1>
-      ) : (
-        rooms.map((room) => <Rooms key={room._id} {...room} />)
-      )} */}
     </div>
   );
 };
