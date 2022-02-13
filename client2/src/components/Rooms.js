@@ -1,26 +1,9 @@
-import { FC } from "react";
 import { Link } from "react-router-dom";
 //fix rooms any in homwscreen
 
-enum roomType {
-  "Delux",
-  "Non-delux",
-}
-
-interface RoomsProps {
-  name: string;
-  description: string;
-  imageurls: [string];
-  maxcount: number;
-  phonenumber: number;
-  type: roomType;
-  rentperday: number;
-  props: any;
-  _id: any;
-}
 // { rooms }:
 
-const Rooms: FC<RoomsProps> = ({
+const Rooms = ({
   name,
   description,
   imageurls,
