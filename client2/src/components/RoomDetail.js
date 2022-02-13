@@ -20,21 +20,9 @@ const RoomDetails = () => {
   const { loading, error, room } = roomDetails;
 
   const { data } = room;
-  const {
-    name,
-    maxcount,
-    type,
-    rentperda,
-    description,
-    phonenumber,
-    imageurls,
-  } = data;
-  console.log(data.name);
 
   return (
     <div className="gg">
-      {/* <h1>Room Details </h1> */}
-
       {loading ? (
         <h1>Loading...</h1>
       ) : error ? (
@@ -42,13 +30,13 @@ const RoomDetails = () => {
       ) : data ? (
         //now destructured in line 33
         <div>
-          <img src={imageurls[0]} alt="room" className="card__image" />
-          <h2>{name}</h2>
-          <p>{maxcount}</p>
-          <p>{phonenumber}</p>
-          <p>{type}</p>
-          <p>{rentperda}</p>
-          <p>{description}</p>
+          <img src={data.imageurls[0]} alt="room" className="card__image" />
+          <h2>{data.name}</h2>
+          <p>{data.maxcount}</p>
+          <p>{data.phonenumber}</p>
+          <p>{data.type}</p>
+          <p>{data.rentperda}</p>
+          <p>{data.description}</p>
         </div>
       ) : (
         <h1>error</h1>
