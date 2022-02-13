@@ -15,12 +15,12 @@ const Rooms = ({
 }) => {
   return (
     <div className=" card">
-      <Link to={`/room/${_id}`}>
+      <Link to={`/${_id}`}>
         <div className="card__imagediv">
           <img src={imageurls[0]} alt="room" className="card__image" />
         </div>
       </Link>
-      <Link to={`/room/${_id}`}>
+      <Link to={`/${_id}`}>
         <div className="card__datadiv">
           <h2 className="card__name">{name}</h2>
 
