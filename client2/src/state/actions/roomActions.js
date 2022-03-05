@@ -43,7 +43,7 @@ export const listRoomDetails = (id) => async (dispatch) => {
     const modID = id;
     const link = `${url}/${modID}`;
 
-    console.log(link, `in room action`);
+    //console.log(link, `in room action`);
 
     const { data } = await axios.get(link);
 

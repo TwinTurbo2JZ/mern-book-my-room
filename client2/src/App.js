@@ -8,6 +8,8 @@ import RoomScreen from "./components/RoomScreen";
 import RoomDetails from "./components/RoomDetail";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Login from "./components/screens/Login";
+import Register from "./components/screens/Register";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Routes>
           <Route path="/" element={<RoomScreen />}></Route>
           <Route path="/:id" element={<RoomDetails />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
         <Footer />
       </div>

@@ -11,17 +11,17 @@ const Header = () => {
 
         <ul className="header__lists">
           <li>
-            <Link to="/" className="header__list">
+            <Link to="/register" className="header__list">
               <p>Register</p>
             </Link>
           </li>
           <li>
-            <Link to="/hotels" className="header__list">
+            <Link to="/login" className="header__list">
               Log in
             </Link>
           </li>
           <li>
-            <Link to="/hotels" className="header__list">
+            <Link to="#" className="header__list">
               Trips
             </Link>
           </li>
