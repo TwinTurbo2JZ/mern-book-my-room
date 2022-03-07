@@ -18,6 +18,7 @@ const cookieParser = require("cookie-parser");
 
 //importing routes
 const rooms = require("./routes/rooms.js");
+const users = require("./routes/user");
 
 //middleware
 app.use(cors());
@@ -25,6 +26,7 @@ app.use(cors());
 //router routes
 
 app.use("/api", rooms);
+app.use("/api", users);
 
 //body parser
 app.use(express.json());
