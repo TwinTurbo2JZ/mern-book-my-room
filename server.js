@@ -13,6 +13,9 @@ const port = 5000 || process.env.PORT;
 const connectDB = require("./db.js");
 connectDB();
 
+//body parser
+app.use(express.json());
+
 //cookie parser
 const cookieParser = require("cookie-parser");
 
@@ -27,9 +30,6 @@ app.use(cors());
 
 app.use("/api", rooms);
 app.use("/api", users);
-
-//body parser
-app.use(express.json());
 
 //cookie parser
 app.use(cookieParser());

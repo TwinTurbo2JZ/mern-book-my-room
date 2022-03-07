@@ -5,14 +5,16 @@ const User = require("../models/User");
 
 exports.register = async (req, res, next) => {
   try {
-    const user = await User.create(req.body);
+    let { name, email, password } = req.body;
 
-    res.status(200).JSON({
-      status: success,
+    const user = await User.create({ name, email, password });
+
+    res.status(200).json({
+      status: "successful",
       message: "Thanks for registering with us",
     });
   } catch (error) {
-    res.status(400).json({
+    res.status(404).json({
       status: "unsuccessful",
       message: error.message,
     });
@@ -20,9 +22,15 @@ exports.register = async (req, res, next) => {
 };
 
 exports.login = async (req, res, next) => {
-  //   const { email, password } = req.body;
-
   try {
+    let { email, password } = req.body;
+
+    //validate the email and password mannualy
+    if (!email || !password) {
+      return res.status(200).json({
+        message: "Please check credentials",
+      });
+    }
     const user = await User.findOne(req.body);
 
     if (user) {
@@ -34,7 +42,7 @@ exports.login = async (req, res, next) => {
 
     if (!user) {
       return res.status(200).json({
-        status: "user not found",
+        status: "invalid credentials",
       });
     }
   } catch (error) {
