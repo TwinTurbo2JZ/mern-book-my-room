@@ -3,6 +3,10 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Rooms from "./Rooms";
 
+import Error from "./Notification/Error";
+import Loader from "./Notification/Loader";
+import Success from "./Notification/Success";
+
 import { listRooms } from "../state/actions/roomActions";
 const Homescreen = () => {
   const dispatch = useDispatch();
@@ -23,7 +27,7 @@ const Homescreen = () => {
   return (
     <div className="container cards">
       {loading ? (
-        <h1>Loading...</h1>
+        <Loader />
       ) : error ? (
         <h3>{error}</h3>
       ) : data ? (

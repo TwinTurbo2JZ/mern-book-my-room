@@ -28,15 +28,20 @@ const RoomDetails = () => {
       ) : error ? (
         <h3>{error}</h3>
       ) : data ? (
-        //now destructured in line 33
-        <div>
-          <img src={data.imageurls[0]} alt="room" className="card__image" />
-          <h2>{data.name}</h2>
-          <p>{data.maxcount}</p>
-          <p>{data.phonenumber}</p>
-          <p>{data.type}</p>
-          <p>{data.rentperda}</p>
-          <p>{data.description}</p>
+        //now destructured in line 33 //css in Rooms.scss
+        <div className="container grid">
+          <div className="room__image">
+            <img src={data.imageurls[0]} alt="room" className="card__image" />
+          </div>
+
+          <div className="room__data">
+            <h2>{data.name}</h2>
+            <p>Capacity: {data.maxcount} People</p>
+            <p>Phone Number: {data.phonenumber}</p>
+            <p>Room Type: {data.type}</p>
+            <p>Rent: {data.rentperday} INR</p>
+            <p>Description: {data.description}</p>
+          </div>
         </div>
       ) : (
         <h1>error</h1>

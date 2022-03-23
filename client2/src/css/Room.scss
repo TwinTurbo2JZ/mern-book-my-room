@@ -1,0 +1,24 @@
+//for room detail
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5 rem;
+  margin-top: 1em;
+  background: #cacaca;
+  padding: 2em;
+}
+
+.room__image {
+  max-width: 100%;
+}
+
+.room__data {
+  margin-left: 1em;
+  background: #b6b6b6;
+  padding: 1em 1em;
+  line-height: 2;
+
+  & > p {
+    font-weight: 600;
+  }
+}

@@ -1,32 +1,40 @@
 .cards {
   // display: flex;
   // flex-direction: row;
-  border: 2px solid rgb(244, 243, 250);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  // border: 2px solid rgb(244, 243, 250);
 }
 
 .card {
-  border: 2px solid red;
+  // border: 2px solid red;
   padding: 1em 1em;
   margin: 1em 1em;
-  display: flex;
-  flex-direction: row;
+  background-color: #cacaca;
+  //text-decoration: none;
+
+  // display: flex;
+  // flex-direction: row;
 
   &__imagediv {
     margin-right: 1em;
     width: 100%;
     max-width: 20em;
-    border: 2px solid red;
+    // border: 2px solid red;
   }
 
   &__datadiv {
-    border: 2px solid red;
+    //border: 2px solid red;
+    text-decoration: none;
     width: 100%;
-    margin-left: 0.75em;
+    margin-top: 0.75em;
+    color: #4e4e4e;
+    //margin-left: 0.75em;
   }
 
-  &__datadiv > * + * {
-    margin-top: 1em;
-  }
+  // &__datadiv > * + * {
+  //   margin-top: 1em;
+  // }
 
   &__image {
     max-width: 100%;

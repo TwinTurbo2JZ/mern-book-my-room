@@ -1,5 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
+
+import Error from "../Notification/Error";
+import Loader from "../Notification/Loader";
+import Success from "../Notification/Success";
 
 const Register = () => {
   const [name, setName] = useState(" ");
@@ -8,8 +12,15 @@ const Register = () => {
   const [password, setPassword] = useState(" ");
   const [cpassword, setCpassword] = useState(" ");
 
+  //Notification popups States
+  const [loading, setLoading] = useState();
+  const [success, setSuccess] = useState();
+  const [error, setError] = useState();
+
+  let result;
+
   const registerUser = async () => {
-    if (password == cpassword) {
+    if (password === cpassword) {
       const user = {
         name,
         email,
@@ -20,12 +31,16 @@ const Register = () => {
       console.log(user);
 
       try {
-        const result = await axios.post(
-          "http://localhost:5000/api/register",
-          user
-        ).data;
-      } catch (error) {
-        console.log(error.message);
+        setLoading(true);
+        result = await axios.post("http://localhost:5000/api/register", user)
+          .data;
+        //console.log(result, `1`);
+        setLoading(false);
+        setSuccess(true);
+      } catch (err) {
+        setLoading(false);
+        setError(true);
+        console.log(err.message);
       }
     } else {
       alert("Passwords don't match");
@@ -34,6 +49,10 @@ const Register = () => {
 
   return (
     <div>
+      {loading && <Loader />}
+      {success && <Success message={`Thanks for registerig with us`} />}
+      //can move it inside div to style later on
+      {error && <Error message={`something went wrong`} />}
       <h1>Register</h1>
       <input
         type="text"
